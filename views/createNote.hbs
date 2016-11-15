@@ -1,0 +1,29 @@
+<h1 id="headNotes" action='/adNote/' method="post">Create Note</h1>
+<form id="postNoteForm">
+    <div class="input-wrapper">
+        <label for="noteTitle">Titel</label>
+        <input type="text" id="noteTitle" name="noteTitle" placeholder="Title" required>
+    </div>
+    <div class="input-wrapper">
+        <label for="noteDescription">Beschreibung</label>
+        <textarea id="noteDescription" name="noteDescription" placeholder="Beschreibung" required></textarea>
+    </div>
+    <div class="input-wrapper">
+        <label for="noteImportance">Wichtigkeit</label>
+        <input id="noteImportance" placeholder="Wichtigkeit" type="number" name="noteImportance" min="1" max="5" required>
+    </div>
+    <div class="input-wrapper">
+        <label for="noteDate">Fertig bis</label>
+        <input name="noteDate" placeholder="01.01.2016" type="date" id="noteDate" value="01.01.2016" required>
+    </div>
+    <div class="input-wrapper">
+        <div class="inline"><label>
+            <input name="erledigt" type="checkbox"/>
+            Erledigt!
+        </label></div>
+    </div>
+    <div class="inline">
+        <button class="buttonStyle">Anlegen</button>
+    <button class="buttonStyle" type="reset">Abbruch</button>
+    </div>
+</form>

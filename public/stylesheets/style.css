@@ -1,0 +1,85 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+#topHeader{
+  margin-bottom: 30px;
+}
+#createNoteBtnForm{
+  position:absolute;
+}
+#sort{
+  margin-top:3em;
+}
+#selectStyleBtn{
+  display: inline;
+  position: absolute;
+  right: 10px;
+}
+
+#createNote{
+  display: inline;
+  position: relative;
+}
+#sortFinishDate{
+  display: inline;
+  position: relative;
+}
+#sortCreateDate{
+  display: inline;
+  position: relative;
+}
+#sortImportance{
+  display: inline;
+  position: relative;
+}
+#hideFinished{
+  display: inline;
+  position: absolute;
+  right: 10px;
+}
+
+.buttonStyle{
+  margin-top:10px;
+  border: 0;
+  box-shadow: none;
+  border-radius: 0px;
+  width: 150px;
+  background: black;
+  height: 50px;
+  color: white;
+}
+.buttonStyle:hover{
+  background: grey;
+}
+
+#headNotes{
+  width: 100%;
+  padding-bottom:2em;
+  border-bottom: solid 1px;
+}
+
+.input-wrapper{
+  color:black;
+  display:flex;
+  margin-top:1em;
+  flex-direction:column;
+  justify-content:space-around;
+}
+.input-wrapper #notetitle{
+  height:2em;
+}
+.inline{
+  display:inline-block;
+}
+
+#postNoteForm{
+  position:absolute;
+  width:50%;
+  left:25%;
+}
