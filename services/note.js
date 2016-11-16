@@ -1,5 +1,5 @@
 var Datastore = require('nedb');
-var db = new Datastore({filename: './data/note.json', autoload: true});
+var db = new Datastore({filename: './data/notes.json', autoload: true});
 
 
 function Note(title, desc, imp, completed){

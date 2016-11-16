@@ -16,14 +16,14 @@
             {{#each notes}}
                 <div class="noteHeaders">
                     <p>{{completed}}</p>
-                    <p>{{title}}</p>
+                    <p>{{noteTitle}}</p>
                     <p class="priority">{{priority}}</p>
                 </div>
                 <div class="completeCheckbox">
                     <input type="checkbox" class="checkbox";><label> Erledigt</label>
                 </div>
                 <div class ="descriptionContainer">
-                    <textarea>{{desc}}</textarea>
+                    <textarea>{{noteDescription}}</textarea>
                 </div>
                 <div class="editButton">
                     <button type="submit" name="edit_button">Edit</button>
