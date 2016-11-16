@@ -4,9 +4,9 @@ var db = new Datastore({filename: './data/notes.json', autoload: true});
 
 function Note(title, desc, imp, completed){
     this.title = title;
-    this.desc = desc;
-    this.imp = imp;
-    this.completed = completed;
+    this.description = desc;
+    this.importance = imp;
+    this.finishedTill = completed;
 }
 
 function addNote(title, desc, imp, completed, callback) {
