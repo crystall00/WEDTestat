@@ -11,12 +11,28 @@ a {
   color: #00B7FF;
 }
 .noteHeaders{
-  display: inline-block;
+  display: flex;
   width:100%;
 }
 .priority{
   position:absolute;
   right:25%;
+  font-size:2em;
+}
+.priority[value="5"]:before{
+  content:'★★★★★'
+}
+.priority[value="4"]:before{
+  content:'★★★★☆'
+}
+.priority[value="3"]:before{
+  content:'★★★☆☆'
+}
+.priority[value="2"]:before{
+  content:'★★☆☆☆'
+}
+.priority[value="1"]:before{
+  content:'★☆☆☆☆'
 }
 #topHeader{
   margin-bottom: 30px;
@@ -69,6 +85,10 @@ a {
   background: grey;
 }
 
+.completeCheckbox{
+  display:inline-block;
+}
+
 #headNotes{
   width: 100%;
   padding-bottom:2em;
@@ -93,4 +113,37 @@ a {
   position:absolute;
   width:50%;
   left:25%;
+}
+
+.notesDiv{
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+
+.noteHeaders > p{
+  display: inline-block;
+  margin-right: 20px;
+}
+
+
+.priority{
+  position:absolute;
+  right:25%;
+}
+.erledigt{
+  font-weight: bold;
+  margin-right: 20px;
+
+}
+.descriptionNote{
+  width: 80%;
+  height: 4.4em;
+}
+
+.notesDiv > button{
+  display: inline;
+  position: absolute;
+  right: 10px;
 }

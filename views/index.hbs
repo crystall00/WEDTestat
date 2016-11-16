@@ -13,19 +13,17 @@
     </section>
     <section id="notes">
             {{#each notes}}
-                <div class="noteHeaders">
-                    <p>{{finishedTill}}</p>
-                    <p>{{title}}</p>
-                    <p class="priority">{{importance}}</p>
-                </div>
-                <div class="completeCheckbox">
-                    <input type="checkbox" class="checkbox";><label> Erledigt</label>
-                </div>
-                <div class ="descriptionContainer">
-                    <textarea>{{description}}</textarea>
-                </div>
-                <div class="editButton">
-                    <button type="submit" name="edit_button">Edit</button>
+                <div class="notesDiv">
+                    <div class="noteHeaders">
+                        <p>{{finishedTill}}</p>
+                        <p>{{title}}</p>
+                        <div value="{{importance}}" class="priority"></div>
+                    </div>
+                    <div class="completeCheckbox">
+                        <input type="checkbox" class="checkbox";><label class="erledigt"> Erledigt</label>
+                    </div>
+                        <textarea class="descriptionNote">{{description}}</textarea>
+                        <button type="submit" class="buttonStyle" name="edit_button">Edit</button>
                 </div>
             {{/each}}
     </section>
