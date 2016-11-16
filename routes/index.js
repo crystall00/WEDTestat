@@ -1,5 +1,5 @@
 var express = require('express');
-var data = require('../services/note')
+var data = require('../services/note.js')
 var router = express.Router();
 
 
@@ -14,7 +14,7 @@ router.get('/', function(req, res, next) {
     notedata = {
       notes : notes
     };
-    res.render('index', { notes: notedata });
+    res.render('index', notedata);
   });
 });
 

@@ -1,6 +1,6 @@
 <html>
     <header id="topHeader">
-        <form id="createNoteBtnForm" action="./createNote.hbs" method="get">
+        <form id="createNoteBtnForm" action="/createNote" method="get">
             <button class="buttonStyle" id="createNote">Create New Note</button>
         </form>
         <button class="buttonStyle" id="selectStyleBtn">Style Switcher</button>
@@ -12,23 +12,21 @@
         <button class="buttonStyle" id="sortImportance">By Importance</button>
     </section>
     <section id="notes">
-
             {{#each notes}}
                 <div class="noteHeaders">
-                    <p>{{completed}}</p>
-                    <p>{{noteTitle}}</p>
-                    <p class="priority">{{priority}}</p>
+                    <p>{{finishedTill}}</p>
+                    <p>{{title}}</p>
+                    <p class="priority">{{importance}}</p>
                 </div>
                 <div class="completeCheckbox">
                     <input type="checkbox" class="checkbox";><label> Erledigt</label>
                 </div>
                 <div class ="descriptionContainer">
-                    <textarea>{{noteDescription}}</textarea>
+                    <textarea>{{description}}</textarea>
                 </div>
                 <div class="editButton">
                     <button type="submit" name="edit_button">Edit</button>
                 </div>
             {{/each}}
-
     </section>
 </html>

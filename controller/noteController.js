@@ -19,9 +19,6 @@ module.exports.postData = function (req, res) {
         }
         res.redirect('/');
     });
-
-    // res.redirect("/adNote?"+qs.stringify({title /*, desc, imp, doneU*/}));
-
 };
 
 
