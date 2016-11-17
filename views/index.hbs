@@ -26,7 +26,8 @@
                     <div class="timeFinished">
                         <p>{{finishedTill}}</p>
                         <div class="completeCheckbox">
-                            <input type="checkbox" disabled readonly class="checkbox";><label class="erledigt"> Erledigt</label>
+                                <input name="erledigt" type="checkbox" {{#if finished}}checked{{/if}} disabled readonly/>
+                            <label for="checkbox" class="erledigt"> Erledigt</label>
                         </div>
                     </div>
 

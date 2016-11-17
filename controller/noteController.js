@@ -10,8 +10,9 @@ module.exports.postData = function (req, res) {
     var title = (req.body.noteTitle);
     var desc = (req.body.noteDescription);
     var imp = (req.body.noteImportance);
-    var completed = (req.body.noteDate);
-    store.add(title, desc, imp, completed, function (err, newDoc) {
+    var finishedTill = (req.body.noteDate);
+    var finished = (req.body.erledigt);
+    store.add(title, desc, imp, finishedTill,finished, function (err, newDoc) {
         if(err){
             res.status(err.status || 500);
             res.render('error');
@@ -32,13 +33,14 @@ module.exports.saveNote = function (req, res) {
     var title = (req.body.noteTitle);
     var desc = (req.body.noteDescription);
     var imp = (req.body.noteImportance);
-    var completed = (req.body.noteDate);
-    store.edit(req.params.id,title, desc, imp, completed, function (err, newDoc) {
+    var finishedTill = (req.body.noteDate);
+    var finished = (req.body.erledigt);
+    store.edit(req.params.id,title, desc, imp, finishedTill,finished, function (err, newDoc) {
         if(err){
             res.status(err.status || 500);
             res.render('error');
             return;
         }
-        res.redirect('/');
     });
+    res.redirect('/');
 };

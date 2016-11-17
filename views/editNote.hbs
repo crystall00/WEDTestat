@@ -19,12 +19,8 @@
         </div>
 
         <div class="input-wrapper">
-            <div class="inline"><label>
-            {{#if finished}}
-                <input name="erledigt" type="checkbox" value="on" checked/>
-            {{else}}
-                <input name="erledigt" type="checkbox" value="on"/>
-            {{/if}}
+            <div class="inline"><label for="checkbox">
+                <input name="erledigt" type="checkbox" {{#if finished}}checked{{/if}}/>
                 Erledigt!
             </label></div>
         </div>
