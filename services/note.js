@@ -25,4 +25,25 @@ function getData(callback) {
 }
 
 //WICHTIG: alle funktionen exportieren damit andere Functionen die sehen
-module.exports = {add : addNote, getData : getData};
+module.exports = {add : addNote, getData : getData, getAll : publicAll, set : publicEdit, delete : publicDelete};
+
+
+function publicDelete(id, callback)
+{
+    db.remove({_id: id}, {}, function(err, doc){
+        callback(err, doc);
+    });
+}
+
+function publicEdit(id, title, description, importance, finishedTill, finished, callback){
+    db.update({_id: id}, {$set: {"title": title, "description": description, "importance": importance, "finishedTill": finishedTill, "finished": finished}}, function(err, doc){
+        callback(err, doc);
+    });
+}
+
+function publicAll(callback)
+{
+    db.find({}, function (err, note) {
+        callback(err, note);
+    });
+}

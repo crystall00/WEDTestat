@@ -1,6 +1,11 @@
 var store = require("../services/note.js");
 var qs = require('qs');
 
+var service = require("../services/note.js");
+var reverse = false;
+var invisible = false;
+var styleChanged = false;
+var title = 'Alle Notizen';
 
 module.exports.renderSite = function (req, res) {
     res.render('createNote');
@@ -20,9 +25,3 @@ module.exports.postData = function (req, res) {
         res.redirect('/');
     });
 };
-
-
-/*module.exports.renderData = function (req, res) {
-
-
- }*/

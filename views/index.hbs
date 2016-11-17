@@ -4,27 +4,47 @@
             <button class="buttonStyle" id="createNote">Create New Note</button>
         </form>
         <button class="buttonStyle" id="selectStyleBtn">Style Switcher</button>
-        </header>
-    <section id="sort">
+    </header>
+    <section id="submenu">
+        <div class="sortButtons">
+            <form action="/" method="get">
+                <button class="buttonStyle" id="sortFinishDate" type="submit">By finish Date</button>
+            </form>
+            <form action="/" method="get">
+                <button class="buttonStyle" id="sortCreateDate" type="submit">By created Date</button>
+            </form>
+            <form action="/" method="get">
+                <button class="buttonStyle" id="sortImportance" type="submit">By Importance</button>
+            </form>
+        </div>
         <button class="buttonStyle" id="hideFinished">Hide Finished</button>
-        <button class="buttonStyle" id="sortFinishDate">By finish Date</button>
-        <button class="buttonStyle" id="sortCreateDate">By created Date</button>
-        <button class="buttonStyle" id="sortImportance">By Importance</button>
     </section>
     <section id="notes">
+    {{#if notes}}
             {{#each notes}}
                 <div class="notesDiv">
-                    <div class="noteHeaders">
+                    <div class="timeFinished">
                         <p>{{finishedTill}}</p>
-                        <p>{{title}}</p>
-                        <div value="{{importance}}" class="priority"></div>
+                        <div class="completeCheckbox">
+                            <input type="checkbox" disabled readonly class="checkbox";><label class="erledigt"> Erledigt</label>
+                        </div>
                     </div>
-                    <div class="completeCheckbox">
-                        <input type="checkbox" class="checkbox";><label class="erledigt"> Erledigt</label>
+
+
+                    <div class="titleDescriptionWrapper">
+                        <div class="titlePriority">
+                            <p>{{title}}</p>
+                            <div value="{{importance}}" class="priority"></div>
+                        </div>
+                            <textarea disabled readonly class="descriptionNote">{{description}}</textarea>
                     </div>
-                        <textarea class="descriptionNote">{{description}}</textarea>
+                    <div class="buttonWrapper">
                         <button type="submit" class="buttonStyle" name="edit_button">Edit</button>
+                    </div>
                 </div>
             {{/each}}
+        {{else}}
+            <div class="emptyNotes"><p>No notes found</p></div>
+        {{/if}}
     </section>
 </html>

@@ -3,20 +3,19 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-.noteHeaders > p{
-  display: inline-block;
-}
-
 a {
   color: #00B7FF;
 }
+
+#submenu form{
+  display:inline-flex;
+}
+
 .noteHeaders{
   display: flex;
   width:100%;
 }
 .priority{
-  position:absolute;
-  right:25%;
   font-size:2em;
 }
 .priority[value="5"]:before{
@@ -35,42 +34,21 @@ a {
   content:'★☆☆☆☆'
 }
 #topHeader{
-  margin-bottom: 30px;
-}
-#createNoteBtnForm{
-  position:absolute;
-}
-#sort{
-  margin-top:3em;
-}
-#selectStyleBtn{
-  display: inline;
-  position: absolute;
-  right: 10px;
+  width:100%;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-between;
 }
 
-#createNote{
-  display: inline;
-  position: relative;
+#submenu{
+  width:100%;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-between;
+  border-bottom: solid black 1px;
+  padding-bottom: 1em;
+  margin-bottom: 1em;
 }
-#sortFinishDate{
-  display: inline;
-  position: relative;
-}
-#sortCreateDate{
-  display: inline;
-  position: relative;
-}
-#sortImportance{
-  display: inline;
-  position: relative;
-}
-#hideFinished{
-  display: inline;
-  position: absolute;
-  right: 10px;
-}
-
 .buttonStyle{
   margin-top:10px;
   border: 0;
@@ -80,13 +58,13 @@ a {
   background: black;
   height: 50px;
   color: white;
+  font-size: 1.1em;
 }
 .buttonStyle:hover{
   background: grey;
 }
 
 .completeCheckbox{
-  display:inline-block;
 }
 
 #headNotes{
@@ -116,34 +94,67 @@ a {
 }
 
 .notesDiv{
-  display: inline-block;
+  display: flex;
   width: 100%;
+  flex-wrap: wrap;
+  justify-content:space-between;
   margin-bottom: 20px;
+  border-bottom: 1px solid black;
+  padding-bottom: 2em;
 }
 
-
-.noteHeaders > p{
-  display: inline-block;
-  margin-right: 20px;
-}
-
-
-.priority{
-  position:absolute;
-  right:25%;
-}
 .erledigt{
   font-weight: bold;
   margin-right: 20px;
 
 }
 .descriptionNote{
-  width: 80%;
-  height: 4.4em;
+  width: 100%;
+  height: 6em;
+  box-sizing:border-box;
+}
+.titleDescriptionWrapper{
+  display:flex;
+  flex-wrap:wrap;
+  width:65%;
+}
+.buttonWrapper button{
+  margin-top:3.2em;
+}
+.titlePriority{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-between;
+  width:100%;
 }
 
-.notesDiv > button{
-  display: inline;
-  position: absolute;
-  right: 10px;
+.contentWrapper{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-between;
+  width:100%;
+}
+
+.timeFinished{
+  display:flex;
+  flex-wrap:wrap;
+  flex-direction:column;
+}
+
+@media (max-width: 836px){
+  .buttonWrapper button{
+    margin-top:1em;
+  }
+  .titleDescriptionWrapper{
+    width:100%;
+  }
+  .sortButtons{
+    width:100%;
+  }
+  #submenu button{
+    width:100%;
+  }
+  #submenu form{
+    width:100%;
+  }
 }
