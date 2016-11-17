@@ -7,6 +7,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var index = require('./routes/index');
 var createNote = require('./routes/addNote');
+var editNote = require('./routes/addNote');
 var session = require('express-session');
 var handlebars = require('express-hbs');
 handlebars.registerHelper('equal', function(lvalue, rvalue, options) {
@@ -36,6 +37,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 app.use('/createNote', createNote);
+app.use('/edit', editNote);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

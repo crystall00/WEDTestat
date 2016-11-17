@@ -21,7 +21,6 @@
     </section>
     <section id="notes">
     {{#if notes}}
-
             {{#each notes}}
                 <div class="notesDiv">
                     <div class="timeFinished">
@@ -40,7 +39,7 @@
                             <textarea disabled readonly class="descriptionNote">{{description}}</textarea>
                     </div>
                     <div class="buttonWrapper">
-                        <button type="submit" class="buttonStyle" name="edit_button">Edit</button>
+                        <form action="/edit/{{_id}}" method="get"><button type="submit" class="buttonStyle">Edit</button></form>
                     </div>
                 </div>
             {{/each}}
