@@ -33,7 +33,7 @@ module.exports.saveNote = function (req, res) {
     var desc = (req.body.noteDescription);
     var imp = (req.body.noteImportance);
     var completed = (req.body.noteDate);
-    store.add(title, desc, imp, completed, function (err, newDoc) {
+    store.edit(req.params.id,title, desc, imp, completed, function (err, newDoc) {
         if(err){
             res.status(err.status || 500);
             res.render('error');

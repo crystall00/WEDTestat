@@ -22,4 +22,13 @@ function getData(callback) {
     db.find({}, callback);
 }
 
-module.exports = {add : addNote, getData : getData};
+
+function editNoteFunction(id, title, description, importance, finishedTill, finished, callback){
+    db.update({_id: id}, {$set: {"title": title, "description": description, "importance": importance, "finishedTill": finishedTill, "finished": finished}}, function(err, doc){
+        if(callback){
+            callback(err, doc);
+        }
+    });
+}
+
+module.exports = {add : addNote, getData : getData, edit:editNoteFunction};

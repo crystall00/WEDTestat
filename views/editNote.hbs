@@ -1,13 +1,13 @@
 <h1 id="headNotes">Edit Note</h1>
 {{#each notes}}
-    <form id="postNoteForm" action="/editNote/{{_id}}/" method="post">
+    <form id="postNoteForm" action="/edit/{{_id}}/" method="post">
         <div class="input-wrapper">
             <label for="noteTitle">Titel</label>
-            <input type="text" id="noteTitle" name="noteTitle" value"{{title}}" required>
+            <input type="text" id="noteTitle" name="noteTitle" value="{{title}}" required>
         </div>
         <div class="input-wrapper">
             <label for="noteDescription">Beschreibung</label>
-            <textarea id="noteDescription" value="{{description}}" name="noteDescription" required></textarea>
+            <textarea id="noteDescription" name="noteDescription" required>{{description}}</textarea>
         </div>
         <div class="input-wrapper">
             <label for="noteImportance">Wichtigkeit</label>
