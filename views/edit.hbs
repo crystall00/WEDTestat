@@ -1,0 +1,34 @@
+<div class="page-wrapper">
+    <h1 id="headNotes">Edit Note</h1>
+    {{#each notes}}
+            <form id="postNoteForm" action="/edit/{{_id}}/" method="post">
+                <div class="input-wrapper">
+                    <label for="noteTitle">Titel</label>
+                    <input type="text" id="noteTitle" name="noteTitle" value="{{noteTitle}}" required>
+                </div>
+                <div class="input-wrapper">
+                    <label for="noteDescription">Beschreibung</label>
+                    <textarea id="noteDescription" name="noteDescription" required>{{description}}</textarea>
+                </div>
+                <div class="input-wrapper">
+                    <label for="noteImportance">Wichtigkeit</label>
+                    <input id="noteImportance" value="{{importance}}" type="number" name="noteImportance" min="1" max="5" required>
+                </div>
+                <div class="input-wrapper">
+                    <label for="noteDate">Fertig bis</label>
+                    <input name="noteDate" value="{{finishedTill}}" type="date" id="noteDate" value="01.01.2016" required>
+                </div>
+
+                <div class="input-wrapper">
+                    <div class="inline"><label for="checkbox">
+                        <input name="erledigt" type="checkbox" {{#if finished}}checked{{/if}}/>
+                        Erledigt!
+                    </label></div>
+                </div>
+                <div class="button-wrapper">
+                    <button class="buttonStyle">Speichern</button>
+                    <button class="buttonStyle" onclick="location.href = '/';">Abbruch</button>
+                </div>
+            </form>
+    {{/each}}
+</div>

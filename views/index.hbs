@@ -1,51 +1,81 @@
 <html>
-    <header id="topHeader">
-        <form id="createNoteBtnForm" action="/createNote" method="get">
-            <button class="buttonStyle" id="createNote">Create New Note</button>
-        </form>
-        <button class="buttonStyle" id="selectStyleBtn">Style Switcher</button>
-    </header>
-    <section id="submenu">
-        <div class="sortButtons">
-            <form action="/" method="get">
-                <button class="buttonStyle" id="sortFinishDate" type="submit">By finish Date</button>
+    <div class="page-wrapper">
+        <header id="topHeader">
+            <form id="createNoteBtnForm" action="/notes/" method="get">
+                <button class="buttonStyle" id="createNote" type="submit">Create New Note</button>
             </form>
-            <form action="/" method="get">
-                <button class="buttonStyle" id="sortCreateDate" type="submit">By created Date</button>
+            <form action="/style/" method="get">
+            <button class="buttonStyle" id="selectStyleBtn" type="submit">Style Switcher</button>
             </form>
-            <form action="/" method="get">
-                <button class="buttonStyle" id="sortImportance" type="submit">By Importance</button>
+        </header>
+        <section id="submenu">
+            <div class="sortButtons">
+                <form action="/sort/finishedTill/" method="get">
+                    <button class="buttonStyle" id="sortFinishDate" type="submit">By finish Date
+                        {{#equal sorting 'finishedUp'}}
+                            ↑
+                        {{/equal}}
+                        {{#equal sorting 'finishedDown'}}
+                            ↓
+                        {{/equal}}
+                    </button>
+                </form>
+                <form action="/sort/created/" method="get">
+                    <button class="buttonStyle" id="sortCreateDate" type="submit">By created Date
+                        {{#equal sorting 'createdUp'}}
+                            ↑
+                        {{/equal}}
+                        {{#equal sorting 'createdDown'}}
+                            ↓
+                        {{/equal}}
+                    </button>
+                </form>
+                <form action="/sort/importance/" method="get">
+                    <button class="buttonStyle" id="sortImportance" type="submit">By Importance
+                        {{#equal sorting 'importanceUp'}}
+                            ↑
+                        {{/equal}}
+                        {{#equal sorting 'importanceDown'}}
+                            ↓
+                        {{/equal}}
+                    </button>
+                </form>
+            </div>
+            <form action="/invisible" method="get">
+                <button class="buttonStyle" id="hideFinished" type="submit">Hide Finished
+                    {{#equal invisible true}}
+                        ✓
+                    {{/equal}}
+                </button>
             </form>
-        </div>
-        <button class="buttonStyle" id="hideFinished">Hide Finished</button>
-    </section>
-    <section id="notes">
-    {{#if notes}}
-            {{#each notes}}
-                <div class="notesDiv">
-                    <div class="timeFinished">
-                        <p>{{finishedTill}}</p>
-                        <div class="completeCheckbox">
-                                <input name="erledigt" type="checkbox" {{#if finished}}checked{{/if}} disabled readonly/>
-                            <label for="checkbox" class="erledigt"> Erledigt</label>
+        </section>
+        <section id="notes">
+        {{#if notes}}
+                {{#each notes}}
+                    <div class="notesDiv">
+                        <div class="timeFinished">
+                            <p>{{finishedTill}}</p>
+                            <div class="completeCheckbox">
+                                    <input name="erledigt" type="checkbox" {{#if finished}}checked{{/if}} disabled readonly/>
+                                <label for="checkbox" class="erledigt"> Erledigt</label>
+                            </div>
+                        </div>
+
+                        <div class="titleDescriptionWrapper">
+                            <div class="titlePriority">
+                                <p>{{noteTitle}}</p>
+                                <div value="{{importance}}" class="priority"></div>
+                            </div>
+                                <textarea disabled readonly class="descriptionNote">{{description}}</textarea>
+                        </div>
+                        <div class="editButtonWrapper">
+                            <form action="/edit/{{_id}}" method="get"><button type="submit" class="buttonStyle">Edit</button></form>
                         </div>
                     </div>
-
-
-                    <div class="titleDescriptionWrapper">
-                        <div class="titlePriority">
-                            <p>{{title}}</p>
-                            <div value="{{importance}}" class="priority"></div>
-                        </div>
-                            <textarea disabled readonly class="descriptionNote">{{description}}</textarea>
-                    </div>
-                    <div class="buttonWrapper">
-                        <form action="/edit/{{_id}}" method="get"><button type="submit" class="buttonStyle">Edit</button></form>
-                    </div>
-                </div>
-            {{/each}}
-        {{else}}
-            <div class="emptyNotes"><p>No notes found</p></div>
-        {{/if}}
-    </section>
+                {{/each}}
+            {{else}}
+                <div class="emptyNotes"><p>No notes found</p></div>
+            {{/if}}
+        </section>
+    </div>
 </html>

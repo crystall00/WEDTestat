@@ -1,0 +1,161 @@
+body {
+    padding: 50px;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    filter: invert(100%);
+    background: black;
+}
+
+a {
+    color: #00B7FF;
+}
+
+.page-wrapper{
+    width: 1000px;
+    margin: 0 auto;
+}
+
+#submenu form{
+    display:inline-flex;
+}
+
+.noteHeaders{
+    display: flex;
+}
+.priority{
+    font-size:2em;
+}
+.priority[value="5"]:before{
+    content:'★★★★★'
+}
+.priority[value="4"]:before{
+    content:'★★★★☆'
+}
+.priority[value="3"]:before{
+    content:'★★★☆☆'
+}
+.priority[value="2"]:before{
+    content:'★★☆☆☆'
+}
+.priority[value="1"]:before{
+    content:'★☆☆☆☆'
+}
+#topHeader #submenu{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+}
+
+#submenu{
+    border-bottom: solid black 1px;
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+}
+.buttonStyle{
+    margin-top:10px;
+    border: 0;
+    box-shadow: none;
+    border-radius: 0px;
+    width: 150px;
+    background: black;
+    height: 50px;
+    color: white;
+    font-size: 1.1em;
+}
+.buttonStyle:hover{
+    background: grey;
+}
+
+.completeCheckbox{
+}
+
+#headNotes{
+    width: 100%;
+    padding-bottom:2em;
+    border-bottom: solid 1px;
+}
+
+.input-wrapper{
+    color:black;
+    display:flex;
+    margin-top:1em;
+    flex-direction:column;
+    justify-content:space-around;
+}
+.input-wrapper #notetitle{
+    height:2em;
+}
+.inline{
+    display:inline-block;
+}
+
+#postNoteForm{
+    position:absolute;
+    width:50%;
+    left:25%;
+}
+
+.notesDiv{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content:space-between;
+    margin-bottom: 20px;
+    border-bottom: 1px solid black;
+    padding-bottom: 2em;
+}
+
+.erledigt{
+    font-weight: bold;
+    margin-right: 20px;
+
+}
+.descriptionNote{
+    width: 100%;
+    height: 6em;
+    box-sizing:border-box;
+}
+.titleDescriptionWrapper{
+    display:flex;
+    flex-wrap:wrap;
+    width:65%;
+}
+.buttonWrapper button{
+    margin-top:3.2em;
+}
+.titlePriority{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    width:100%;
+}
+
+.contentWrapper{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    width:100%;
+}
+
+.timeFinished{
+    display:flex;
+    flex-wrap:wrap;
+    flex-direction:column;
+}
+
+@media (max-width: 836px){
+    .buttonWrapper button{
+        margin-top:1em;
+    }
+    .titleDescriptionWrapper{
+        width:100%;
+    }
+    .sortButtons{
+        width:100%;
+    }
+    #submenu button{
+        width:100%;
+    }
+    #submenu form{
+        width:100%;
+    }
+}

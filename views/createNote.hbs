@@ -1,29 +1,31 @@
-<h1 id="headNotes">Create Note</h1>
-<form id="postNoteForm" action="/createNote" method="post">
-    <div class="input-wrapper">
-        <label for="noteTitle">Titel</label>
-        <input type="text" id="noteTitle" name="noteTitle" placeholder="Geben Sie einen Titel an" required>
-    </div>
-    <div class="input-wrapper">
-        <label for="noteDescription">Beschreibung</label>
-        <textarea id="noteDescription" name="noteDescription" placeholder="Geben Sie eine Beschreibung ein" required></textarea>
-    </div>
-    <div class="input-wrapper">
-        <label for="noteImportance">Wichtigkeit</label>
-        <input id="noteImportance" placeholder="Geben Sie die Wichtigkeit an" type="number" name="noteImportance" min="1" max="5" required>
-    </div>
-    <div class="input-wrapper">
-        <label for="noteDate">Fertig bis</label>
-        <input name="noteDate" placeholder="01.01.2016" type="date" id="noteDate" value="01.01.2016" required>
-    </div>
-    <div class="input-wrapper">
-        <div class="inline"><label for="checkbox">
-            <input name="erledigt" type="checkbox"/>
-            Erledigt!
-        </label></div>
-    </div>
-    <div class="inline">
-        <button class="buttonStyle">Anlegen</button>
-        <button class="buttonStyle" type="reset">Abbruch</button>
-    </div>
-</form>
+<div class="page-wrapper">
+    <h1 id="headNotes">Create Note</h1>
+    <form id="postNoteForm" action="/createNote" method="post">
+        <div class="input-wrapper">
+            <label for="noteTitle">Titel</label>
+            <input type="text" id="noteTitle" name="noteTitle" placeholder="Geben Sie einen Titel an" required>
+        </div>
+        <div class="input-wrapper">
+            <label for="noteDescription">Beschreibung</label>
+            <textarea id="noteDescription" name="noteDescription" placeholder="Geben Sie eine Beschreibung ein" required></textarea>
+        </div>
+        <div class="input-wrapper">
+            <label for="noteImportance">Wichtigkeit</label>
+            <input id="noteImportance" placeholder="Geben Sie die Wichtigkeit an" type="number" name="noteImportance" min="1" max="5" required>
+        </div>
+        <div class="input-wrapper">
+            <label for="noteDate">Fertig bis</label>
+            <input name="noteDate" placeholder="01.01.2016" type="date" id="noteDate" value="01.01.2016" required>
+        </div>
+        <div class="input-wrapper">
+            <div class="inline"><label for="checkbox">
+                <input name="erledigt" type="checkbox"/>
+                Erledigt!
+            </label></div>
+        </div>
+        <div class="inline">
+            <button class="buttonStyle">Anlegen</button>
+            <button class="buttonStyle" type="reset">Abbruch</button>
+        </div>
+    </form>
+</div>

@@ -1,15 +1,15 @@
 var express = require('express');
-var data = require('../services/note.js')
 var router = express.Router();
+var notes = require('../controller/noteController.js');
 
-router.get('/', function(req, res, next) {
+router.get("/", notes.showIndex);
+router.get("/notes/", notes.showNotePad);
+router.get("/sort/:order/", notes.order);
+router.get("/style/", notes.styler);
+router.get("/invisible/", notes.invisible);
 
-  data.getData(function (err, notes) {
+router.get("/edit/:id/", notes.editNote);
+router.post("/edit/:id/", notes.saveEditedNote);
 
-    notedata = {
-      notes : notes
-    };
-    res.render('index', notedata);
-  });
-});
+router.post("/notes/", notes.postData);
 module.exports = router;

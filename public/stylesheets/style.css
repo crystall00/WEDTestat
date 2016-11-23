@@ -2,18 +2,17 @@ body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
-
 a {
   color: #00B7FF;
 }
-
+.page-wrapper{
+  margin: 0 auto;
+}
 #submenu form{
   display:inline-flex;
 }
-
 .noteHeaders{
   display: flex;
-  width:100%;
 }
 .priority{
   font-size:2em;
@@ -33,18 +32,13 @@ a {
 .priority[value="1"]:before{
   content:'★☆☆☆☆'
 }
-#topHeader{
-  width:100%;
+#topHeader, #submenu, .notesDiv{
   display:flex;
   flex-wrap:wrap;
   justify-content:space-between;
 }
 
 #submenu{
-  width:100%;
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:space-between;
   border-bottom: solid black 1px;
   padding-bottom: 1em;
   margin-bottom: 1em;
@@ -61,43 +55,46 @@ a {
   font-size: 1.1em;
 }
 .buttonStyle:hover{
-  background: grey;
+  background: white;
+  color: black;
+  border: 1px solid black;
+  cursor: pointer;
 }
-
-.completeCheckbox{
-}
-
 #headNotes{
   width: 100%;
   padding-bottom:2em;
   border-bottom: solid 1px;
 }
-
 .input-wrapper{
+  font-size: 1.1em;
   color:black;
   display:flex;
   margin-top:1em;
   flex-direction:column;
-  justify-content:space-around;
+  justify-content:space-between;
 }
-.input-wrapper #notetitle{
-  height:2em;
+.input-wrapper input[type='text'], .input-wrapper input[type='number'], .input-wrapper input[type='date'], .input-wrapper textarea{
+  font-size: 0.75em;
+  padding-left: 0.4em;
+  height:2.5em;
 }
-.inline{
-  display:inline-block;
+.input-wrapper textarea{
+  height:6em;
 }
-
+.button-wrapper{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:flex-start;
+}
+.button-wrapper button{
+  margin-right:1em;
+}
 #postNoteForm{
   position:absolute;
   width:50%;
   left:25%;
 }
-
 .notesDiv{
-  display: flex;
-  width: 100%;
-  flex-wrap: wrap;
-  justify-content:space-between;
   margin-bottom: 20px;
   border-bottom: 1px solid black;
   padding-bottom: 2em;
@@ -118,7 +115,7 @@ a {
   flex-wrap:wrap;
   width:65%;
 }
-.buttonWrapper button{
+.editButtonWrapper button{
   margin-top:3.2em;
 }
 .titlePriority{
@@ -127,14 +124,6 @@ a {
   justify-content:space-between;
   width:100%;
 }
-
-.contentWrapper{
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:space-between;
-  width:100%;
-}
-
 .timeFinished{
   display:flex;
   flex-wrap:wrap;
@@ -142,19 +131,21 @@ a {
 }
 
 @media (max-width: 836px){
-  .buttonWrapper button{
+  .editButtonWrapper button{
     margin-top:1em;
-  }
-  .titleDescriptionWrapper{
     width:100%;
   }
-  .sortButtons{
-    width:100%;
+  .priority{font-size: 1.5em;}
+  .titleDescriptionWrapper, .sortButtons, .editButtonWrapper, .button-wrapper button, #submenu button, #submenu form {width:100%;}
+  h1{
+    font-size:1.5em;
   }
-  #submenu button{
+  #postNoteForm{
     width:100%;
+    left:auto;
+    position:inherit;
   }
-  #submenu form{
-    width:100%;
+  .button-wrapper button{
+    margin-right:0px;
   }
 }

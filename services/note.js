@@ -1,11 +1,12 @@
 var Datastore = require('nedb');
 var db = new Datastore({filename: './data/notes.json', autoload: true});
 
-function Note(title, desc, imp, finishedTill, finished){
+function Note(noteTitle, description, importance, finishedTill, finished)
+{
     this.created = Date.now().toString();
-    this.title = title;
-    this.description = desc;
-    this.importance = imp;
+    this.noteTitle = noteTitle;
+    this.description = description;
+    this.importance = importance;
     this.finishedTill = finishedTill;
     this.finished = finished;
 }
@@ -18,18 +19,34 @@ function addNote(title, desc, imp, finishedTill,finished, callback) {
         }
     });
 }
+/*
+function publicAddNote(noteTitle, description, importance, finishedTill, finished, callback)
+{
+    var note = new Note(noteTitle, description, importance, finishedTill, finished);
+    db.insert(note, function(err, doc){
+        if(callback){
+            callback(err, doc);
+        }
+    });
+}*/
+
+function publicDelete(id, callback)
+{
+    db.remove({_id: id}, {}, function(err, doc){
+        callback(err, doc);
+    });
+}
+
+function publicEdit(id, noteTitle, description, importance, finishedTill, finished, callback){
+    db.update({_id: id}, {$set: {"noteTitle": noteTitle, "description": description, "importance": importance, "finishedTill": finishedTill, "finished": finished}}, function(err, doc){
+        callback(err, doc);
+    });
+}
+
 
 function getData(callback) {
     db.find({}, callback);
 }
 
 
-function editNoteFunction(id, title, description, importance, finishedTill, finished, callback){
-    db.update({_id: id}, {$set: {"title": title, "description": description, "importance": importance, "finishedTill": finishedTill, "finished": finished}}, function(err, doc){
-        if(callback){
-            callback(err, doc);
-        }
-    });
-}
-
-module.exports = {add : addNote, getData : getData, edit:editNoteFunction};
+module.exports = {add : addNote, getData : getData, edit : publicEdit, delete : publicDelete};
