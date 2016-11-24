@@ -7,6 +7,11 @@ a {
 }
 .page-wrapper{
   margin: 0 auto;
+  padding-left: 2em;
+  padding-right: 2em;
+  width:65%;
+  border-left: solid black 1px;
+  border-right: solid black 1px;
 }
 #submenu form{
   display:inline-flex;
@@ -38,11 +43,6 @@ a {
   justify-content:space-between;
 }
 
-#submenu{
-  border-bottom: solid black 1px;
-  padding-bottom: 1em;
-  margin-bottom: 1em;
-}
 .buttonStyle{
   margin-top:10px;
   border: 0;
@@ -98,9 +98,8 @@ a {
   left:25%;
 }
 .notesDiv{
-  margin-bottom: 20px;
-  border-bottom: 1px solid black;
-  padding-bottom: 2em;
+  margin-top: 20px;
+  border-top: 1px solid black;
 }
 
 .erledigt{
@@ -149,10 +148,24 @@ a {
   .button-wrapper button{
     margin-right:0px;
   }
+  .page-wrapper{
+    width:90%;
+    padding-left: 0px;
+    padding-right: 0px;
+    border-left: none;
+    border-right: none;
+  }
 }
 
 @media (max-width: 414px){
   #createNote, #selectStyleBtn, #topHeader form{
     width:100%;
+  }
+  .page-wrapper{
+    width:100%;
+    padding-left: 0px;
+    padding-right: 0px;
+    border-left: none;
+    border-right: none;
   }
 }
