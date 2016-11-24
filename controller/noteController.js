@@ -1,9 +1,10 @@
 var service = require("../services/note.js");
 var store = require("../services/note.js");
+var title = 'Alle Notizen';
 var reverse = false;
 var invisible = false;
 var styleChanged = false;
-var title = 'Alle Notizen';
+
 
 module.exports.showIndex = function(req, res){
     service.getData(function(err, notes) {
@@ -69,35 +70,17 @@ module.exports.showIndex = function(req, res){
         }});
 };
 
-module.exports.showNotePad = function(req, res){
+module.exports.newNote = function(req, res){
     if(styleChanged){
-        res.render('new', {style : true});
+        res.render('createNote', {style : true});
     }else{
-        res.render('new');
+        res.render('createNote');
     }
 };
 
 module.exports.editNote = function(req, res){
     service.getData(function(err, notes)
-    {/*
-        if (styleChanged) {
-            service.getData(function(err, notes) {
-                var myNotes = notes.filter(function (a) {return a._id == req.params.id});
-                res.render("edit", {notes: myNotes});
-            })
-            /*
-            res.render('edit', {note : notes.filter(function (a) {return a._id == req.params.id}), style: true});
-
-        } else {
-            service.getData(function(err, notes) {
-                var myNotes = notes.filter(function (a) {return a._id == req.params.id});
-                res.render("edit", {notes: myNotes});
-            })
-            /*
-            res.render('edit', {note : notes.filter(function (a) {return a._id == req.params.id})});
-
-        }
-    */
+    {
         if (styleChanged) {
             res.render('edit', {notes : notes.filter(function (a) {return a._id == req.params.id}), style: true});
         } else {
@@ -106,7 +89,7 @@ module.exports.editNote = function(req, res){
     });
 };
 
-module.exports.saveEditedNote = function(req, res){
+module.exports.saveNote = function(req, res){
     var title = (req.body.noteTitle);
     var desc = (req.body.noteDescription);
     var imp = (req.body.noteImportance);
