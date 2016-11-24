@@ -21,7 +21,7 @@ module.exports.showIndex = function(req, res){
                     break;
                 case 'finishedTill':
                     notes.sort(function (a, b) {
-                        return (sorting(b.finishedTo, a.finishedTo))
+                        return (sorting(b.finishedTill, a.finishedTill))
                     });
                     if(!reverse){
                         req.session.sorting = 'finishedUp';
