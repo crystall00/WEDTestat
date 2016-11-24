@@ -57,9 +57,7 @@ a {
     font-size: 1.1em;
 }
 .buttonStyle:hover{
-    background: black;
-    color: white;
-    border: none;
+    background: #d1d1d1;
     cursor: pointer;
 }
 #headNotes{

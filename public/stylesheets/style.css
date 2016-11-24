@@ -45,17 +45,17 @@ a {
 
 .buttonStyle{
   margin-top:10px;
-  border: 0;
+  border: 1px solid black;
   box-shadow: none;
   border-radius: 0px;
   width: 150px;
-  background: black;
+  background: #f1f1f1;
   height: 50px;
-  color: white;
+  color: black;
   font-size: 1.1em;
 }
 .buttonStyle:hover{
-  background: white;
+  background: lightgrey;
   color: black;
   border: 1px solid black;
   cursor: pointer;
